@@ -1,0 +1,59 @@
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var name = prompt("Enter your Name?");
+      var arrayName = [];
+
+      function checkName(name) {
+        var nameSplit = name.split("");
+        for (let index = 0; index < nameSplit.length; index++) {
+          var element = nameSplit[index];
+          if (
+            typeof element === "number" || !isNaN(+element)||
+            (element === "!" ||
+              element === "@" ||
+              element === "#" ||
+              element === "$" ||
+              element === "%" ||
+              element === "^" ||
+              element === "&" ||
+              element === "*" ||
+              element === "(" ||
+              element === ")")
+          ) {
+            name = prompt("Enter your Name?");
+          } else {
+            arrayName.push(element);
+          }
+        }
+        return arrayName;
+      }
+
+      arrayName = checkName(name);
+
+      var phoneNum = prompt("Enter Your Phone Number?");
+      while (
+        !(
+          (phoneNum.substring(0, 3) === "010" ||
+            phoneNum.substring(0, 3) === "011" ||
+            phoneNum.substring(0, 3) === "012" ||
+            phoneNum.substring(0, 3) === "015") &&
+          phoneNum.trim().length === 11
+        ) ||
+        isNaN(+phoneNum)
+      ) {
+        phoneNum = prompt("Enter Your Phone Number?");
+      }
+
+      // Convert the arrayName array to a string
+      var nameString = arrayName.join("");
+
+      document.write(`${nameString} ---> ${phoneNum}`);
+      console.log(phoneNum.substring(0, 3));
+      console.log(arrayName);
+    </script>
+  </body>
+</html>

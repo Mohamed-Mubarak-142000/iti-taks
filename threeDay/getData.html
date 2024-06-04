@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Show Info</title>
+
+    <style>
+      h3 {
+        width: 300px;
+        margin: 5px auto;
+        text-transform: capitalize;
+        border: 2px solid lightblue;
+        text-align: center;
+        background-color: lightskyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var url = location.href.substring(location.href.indexOf("?") + 1);
+      for (let index = 0; index < 4; index++) {
+        document.writeln(`<h3>${url.split("&")[index]}</h3>`);
+      }
+    </script>
+  </body>
+</html>
