@@ -1,0 +1,51 @@
+<html lang="en">
+  <head>
+    <title>Tables value</title>
+
+    <style>
+        table{
+            border: 1px solid lightskyblue;
+            width: 100px;
+        }
+    
+        td ,th{
+            padding: 10px;
+            border: 1px solid lightblue;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        th:first-of-type{
+            background-color: lightskyblue;
+        }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>values</th>
+      </tr>
+    </table>
+    <script>
+      var nums = prompt('Enter Your Numbers with "," between nums?');
+      var arr = nums.split(",");
+
+
+      arr.map((item, index) => {
+        isNaN(Number(item)) || item.trim().length === 0 ? location.reload() : "";
+      });
+      arr.map((item) => {
+        document.getElementsByTagName("table")[0].innerHTML += `<tr><td>${item}</td></tr>`;
+      });
+      for (let i = 0; i < nums.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+          if (arr[i] === arr[j]) {
+            document.write(`
+              repeated row =${i + 1} and the value of repeated ${arr[i]}
+            `);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Random Value:</h2>
+    <h1 id="num"></h1>
+    <script>
+      var numDis = document.getElementById("num");
+      setInterval(() => {
+        var randomNumber = Math.random() * 10;
+        numDis.innerText = Math.floor(randomNumber);
+      }, 1000);
+    </script>
+  </body>
+</html>

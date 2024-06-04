@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Names</title>
+    <style>
+      .parentDiv {
+        width: 500px;
+        margin: 30px auto;
+        background-color: lightskyblue;
+        padding: 10px;
+        text-align: center;
+        border: 1px solid lightblue;
+      }
+
+      h3 {
+        text-align: left;
+        text-transform: capitalize;
+        color: blue;
+      }
+      img {
+        width: 300px;
+        height: 300px;
+        border: 3px solid gold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parentDiv">
+      <h1>bottle game</h1>
+      <img src="./happy.jpg" alt="image_happy" />
+      <h3>inputs name:</h3>
+      <div id="myinputs"></div>
+      <h3>output name:</h3>
+      <div id="myoutput"></div>
+    </div>
+    <script>
+      var names = [];
+      var outputNames = [];
+      var myinputs = document.getElementById("myinputs");
+      var myoutput = document.getElementById("myoutput");
+
+      // FUNCTION RETURN INPUTS NAMES
+      function returnInputsName() {
+        for (var index = 1; index < 5; index++) {
+          var oneName = prompt(`Enter Your Name ${index}:`);
+          while (oneName.trim().length == 0) {
+            oneName = prompt(`Enter Your Name ${index}:`);
+          }
+          names.push(oneName);
+        }
+        var namesString = names.join(", ");
+        return `<h2>[${namesString}]</h2>`;
+      }
+
+      //DISPLAY INPUTS NAMES
+      myinputs.innerHTML = returnInputsName();
+
+      // FUNCTION GENERATED RANDOM NUMBER
+      function generateRandomNumber() {
+        var randNumber = Math.random() * 10;
+        var resRandom = Math.floor(randNumber);
+        while (randNumber > 4) {
+          randNumber = Math.random() * 10;
+          resRandom = Math.floor(randNumber);
+        }
+        return names[resRandom];
+      }
+
+      for (var index = 0; index < 2; index++) {
+        outputNames.push(generateRandomNumber());
+      }
+
+      //DISPLAY OUTPUT NAMES
+      var outputNamesString = outputNames.join(" , ");
+      myoutput.innerHTML = `<h4>[${outputNamesString}]</h4>`;
+    </script>
+  </body>
+</html>

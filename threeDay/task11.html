@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <title>DATE</title>
+    <style>
+      #mydiv {
+        padding: 10px;
+        text-align: center;
+        width: 200px;
+        height: 100px ;
+        font-size: 20px;
+        margin: auto;
+        border: 2px solid gray;
+        border-radius: 5px;
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Date</h2>
+    <div id="mydiv"></div>
+    <script>
+      var mydiv = document.getElementById("mydiv");
+
+      function getInfoDate() {
+        var today = new Date();
+        const options = { weekday: "long" };
+        var day = today.toLocaleDateString("ar-EG");
+        var time = today.toLocaleTimeString("ar-EG");
+        var todayName = today.toLocaleDateString("ar-EG", options);
+
+        var result = `${day}<br/> ${time}<br/> ${todayName}`;
+        return result;
+      }
+
+      mydiv.innerHTML = getInfoDate();
+    </script>
+  </body>
+</html>

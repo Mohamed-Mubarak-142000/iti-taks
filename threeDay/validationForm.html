@@ -1,0 +1,152 @@
+<html lang="en">
+  <head>
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      form {
+        width: 40%;
+        margin: 50px auto;
+        border: 1px solid lightblue;
+      }
+
+      div {
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .groupcheked {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+      }
+
+      .groupcheked > div {
+        display: flex;
+        gap: 5px;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      input[type="text"],
+      input[type="email"] {
+        width: 90%;
+        outline: none;
+        border-radius: 5px;
+        border: 2px solid lightskyblue;
+        padding: 7px;
+      }
+
+      select {
+        width: 90%;
+        outline: none;
+        border-radius: 5px;
+        border: 2px solid lightskyblue;
+        padding: 7px;
+      }
+
+      div:last-of-type {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      input[type="submit"],
+      input[type="reset"] {
+        margin: 10px 0;
+        padding: 10px;
+        width: 40%;
+        border: none;
+        outline: none;
+      }
+
+      input[type="submit"] {
+        background-color: green;
+        color: white;
+      }
+
+      input[type="reset"] {
+        background-color: lavender;
+        color: black;
+      }
+
+      .invalid {
+        border: 2px solid #cb2929 !important;
+      }
+
+      .success {
+        border: 2px solid #116111 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="server.html">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" name="username" id="name" />
+        <span id="nameMessage"></span>
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" />
+        <span id="emailMessage"></span>
+      </div>
+
+      <div>
+        <label for="country">Country</label>
+        <select name="country" id="selectCountry">
+          <option selected value="111">Egypt</option>
+          <option value="222">France</option>
+          <option value="333">Qatar</option>
+          <option value="444">Kiewit</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="zip">Zip</label>
+        <input type="text" name="zipCode" id="zipCode" />
+        <span id="zipMessage"></span>
+      </div>
+
+      <div class="groupcheked">
+        <label for="name">Hoppies</label>
+        <div>
+          <input type="checkbox" name="check" id="writing" />
+          <label for="writing">Writing</label>
+        </div>
+
+        <div>
+          <input type="checkbox" name="check" value="Reading" id="reading" />
+          <label for="reading">Reading</label>
+        </div>
+
+        <div>
+          <input type="checkbox" name="check" value="Swimming" id="swimming" />
+          <label for="swimming">Swimming</label>
+        </div>
+
+        <div>
+          <input type="checkbox" name="check" value="Sleeping" id="sleeping" />
+          <label for="sleeping">Sleeping</label>
+        </div>
+        <br />
+      </div>
+      <span id="checkedMessage"></span>
+
+      <div>
+        <input type="submit" value="Register" />
+        <input type="reset" value=Clear" id="reset" />
+      </div>
+    </form>
+    <script src="./validationForm.js"></script>
+  </body>
+</html>

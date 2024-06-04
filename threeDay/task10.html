@@ -1,0 +1,15 @@
+<html lang="en">
+  <head>
+    <title>Numbers </title>
+  </head>
+  <body>
+    <script>
+      var prom =prompt("Enter your Numbers and seperated by ,:");
+      while (!prom.length || prom.trim().length ==0) {
+        prom = prompt("Enter your Numbers again and seperated by ,:");
+    }
+    var arrCopy = prom.split(",");
+    document.writeln(`Your array : [${arrCopy}]`);
+    </script>
+  </body>
+</html>
